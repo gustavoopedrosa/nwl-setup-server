@@ -9,3 +9,11 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Habit {
+  id         String   @id @default(uuid()) // seta o id como chave primaria e preenche com um uuid
+  title      String
+  created_at DateTime
+
+  @@map("habits")
+}
